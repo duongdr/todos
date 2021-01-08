@@ -24,11 +24,17 @@ class TodoController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return AnonymousResourceCollection
      */
     public function store(Request $request)
     {
-        //
+        $todo = new Todo();
+        $todo->content = $request['content'];
+        $todo->checked = $request['checked'];
+        $todo->completed = $request['completed'];
+        $todo->save();
+        $todos = Todo::all();
+        return TodoResources::collection($todos);
     }
 
     /**
