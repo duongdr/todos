@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\api\GhtkController;
 use App\Http\Controllers\api\TodoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,3 +21,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::get('todo',[TodoController::class,'index']);
 Route::post('todo',[TodoController::class,'store']);
+Route::get('ghtk',[GhtkController::class, 'getInfo']);

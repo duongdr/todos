@@ -2,7 +2,7 @@
   <div class="row todo-content">
     <div class="col-md-6">
       <div class="todo-list not-done">
-<!--        <h1>TODOS</h1>-->
+        <h1>TODOS</h1>
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Enter content" v-model="textContent">
           <div class="input-group-append">
